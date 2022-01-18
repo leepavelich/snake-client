@@ -1,3 +1,5 @@
+const { MOVEMENTS, MESSAGES } = require('./constants')
+
 // Stores the active TCP connection object.
 let connection;
 
@@ -17,12 +19,9 @@ const setupInput = conn => {
 };
 
 const handleUserInput = key => {
-  if (key === 'w') connection.write('Move: up');
-  if (key === 'a') connection.write('Move: left');
-  if (key === 's') connection.write('Move: down');
-  if (key === 'd') connection.write('Move: right');
+  if (key in MOVEMENTS) connection.write(`Move: ${MOVEMENTS[key]}`);
 
-  if (key === 'm') connection.write('Say: totally tubular');
+  if (key in MESSAGES) connection.write(`Say: ${MESSAGES[key]}`);
   
   // \u0003 maps to ctrl+c input
   if (key === '\u0003') {

@@ -21,6 +21,8 @@ const handleUserInput = key => {
   if (key === 'a') connection.write('Move: left');
   if (key === 's') connection.write('Move: down');
   if (key === 'd') connection.write('Move: right');
+
+  if (key === 'm') connection.write('Say: totally tubular')
   
   // \u0003 maps to ctrl+c input
   if (key === '\u0003') {

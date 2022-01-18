@@ -18,7 +18,7 @@ const connect = function() {
 
   conn.on("data", data => {
     console.log(data.toString());
-    console.log('Press Ctrl-C to exit game')
+    console.log('Press Ctrl-C to exit game');
     conn.end();
   });
 

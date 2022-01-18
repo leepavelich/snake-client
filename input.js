@@ -26,7 +26,6 @@ const handleUserInput = key => {
   
   // \u0003 maps to ctrl+c input
   if (key === '\u0003') {
-    console.log('User disconnected');
     process.exit();
   }
 };

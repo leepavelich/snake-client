@@ -14,12 +14,11 @@ const connect = function() {
     console.log('Successfully connected to game server');
     conn.write('Name: LEE');
 
-    // TEST CODE
-    // setInterval(() => conn.write('Move: up'), 200)
   });
 
   conn.on("data", data => {
     console.log(data.toString());
+    console.log('Press Ctrl-C to exit game')
     conn.end();
   });
 
